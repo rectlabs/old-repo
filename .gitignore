@@ -1,0 +1,8 @@
+# ignore the .venv folder
+.venv/
+yolov5s.pt
+best.pt
+kmeans
+autoencoder.pth
+Autencoder.pth
+Record-2.mp4
