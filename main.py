@@ -1,14 +1,11 @@
 import torch
-from torch.utils.data import DataLoader, Dataset
 import numpy as np
 import os
 import pandas
 import pickle
-from typing import Generator, Dict, List
-import cv2 as cv
-from torchvision import transforms
+from typing import Dict, List
 from video import Video
-from data import PlayerDataset, getPlayers, createDataLoader
+from data import getPlayers, createDataLoader
 from model import ConvAutoencoder, Kmeans, Detector
 
 def getBoundingBoxesMap(detections_df: pandas.DataFrame) -> Dict[str, List]:
@@ -125,8 +122,7 @@ def train(dataLoader, epochs):
 
     
 def main():
-    dataset = generateDataset(videoPath="Record-2.mp4", nBurn=100, detectorWeights="best.pt")
-
+    dataset = generateDataset(videoPath="test-video.mp4", nBurn=100, detectorWeights="best.pt")
     train(dataset, 100)
 
 if __name__ == "__main__":

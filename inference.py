@@ -4,7 +4,7 @@ import pickle
 from torchvision import transforms
 from model import ConvAutoencoder
 
-MODEL_PATH = "Autencoder.pth"
+MODEL_PATH = "autoencoder.pth"
 
 def getAllBoundingBoxes(detections_df):
     detections_map = {}
@@ -75,13 +75,13 @@ def teamClassifier(players):
         teamIdx.append(label)
     return teamIdx
 
-path = "yolov5\\record-3.mp4"
+path = "test-video.mp4"
 
-detector = torch.hub.load("yolov5", "custom", path="yolov5\\best.pt", source="local")
+detector = torch.hub.load("yolov5", "custom", path="best.pt", source="local")
 
 cap = cv.VideoCapture(path)
 
-saveAs = "yolov5\\demo-2.avi"
+saveAs = "demo.avi"
 fps = int(cap.get(cv.CAP_PROP_FPS))
 videoWidth = int(cap.get(cv.CAP_PROP_FRAME_WIDTH))
 videoHeight = int(cap.get(cv.CAP_PROP_FRAME_HEIGHT))

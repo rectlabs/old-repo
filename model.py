@@ -59,7 +59,7 @@ class Detector:
             self.detector = torch.hub.load("yolov5", "custom", path=bestWeights)
             
     def detect(self, frame: Generator) -> pandas.DataFrame:
-        frame = cv.cvtColor(frame, cv.COLOR_BGR2RGB)
+       # frame = cv.cvtColor(frame, cv.COLOR_BGR2RGB)
         detections = self.detector(frame)
         
         return detections.pandas().xyxy[0]

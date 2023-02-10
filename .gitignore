@@ -5,4 +5,6 @@ best.pt
 kmeans
 autoencoder.pth
 Autencoder.pth
-Record-2.mp4
+*.mp4
+*.avi
+*.png
